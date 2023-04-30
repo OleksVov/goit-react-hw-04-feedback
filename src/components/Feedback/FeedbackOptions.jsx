@@ -1,16 +1,25 @@
 import React from "react";
 import css from './FeedbackOption.module.css';
 
-const FeedbackOptions = ({options, onLeaveFeedback}) => {
+const FeedbackOptions = ({onLeaveFeedbackNeutral, onLeaveFeedbackGood, onLeaveFeedbackBad}) => {
     return (
         <div className={css.boxButton}>
-            {options.map(option => (
+            
                <button 
-               type='button' 
-               key={option} 
-               onClick={onLeaveFeedback}
-               >{option}</button> 
-            ))}
+               type='button'  
+               onClick={onLeaveFeedbackGood}
+               >Good</button> 
+
+<button 
+               type='button'  
+               onClick={onLeaveFeedbackNeutral}
+               >Neutral</button>
+
+<button 
+               type='button'  
+               onClick={onLeaveFeedbackBad}
+               >Bad</button>
+            
         </div>
     );
 };
